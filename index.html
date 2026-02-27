@@ -1,115 +1,153 @@
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>welcome to azee's ~ page!</title>
-<style type="text/css">
-  body {
-    font-family: courier;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  body.dark {
-    background-color: #301934;
-    color: #f0f0f0;
-  }
-  body.light {
-    background-color: #f5f5f5;
-    color: #333;
-  }
-  #theme-toggle {
-    float: right;
-    padding: 8px 12px;
-    cursor: pointer;
-    border: 2px solid;
-    background: transparent;
-    font-family: courier;
-    font-size: 14px;
-  }
-  body.dark #theme-toggle {
-    border-color: #f0f0f0;
-    color: #f0f0f0;
-  }
-  body.light #theme-toggle {
-    border-color: #333;
-    color: #333;
-  }
-  a {
-    color: inherit;
-  }
-  .map {
-    max-width: 980px;
-    margin: 5px auto 10px;
-    padding: 0 10px;
-  }
-  .map iframe {
-    width: 100%;
-    aspect-ratio: 3 / 2;
-    border: 0;
-  }
 
-  .header-container {
-    max-width: 980px;
-    margin: 20px auto;
-    padding: 0 10px;
-    overflow: hidden;
-  }
-  .tabs {
-    max-width: 980px;
-    margin: 20px auto;
-    padding: 0 10px;
-  }
-  .tab-buttons {                                                                                                                        
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid;
-  }
-  body.dark .tab-buttons {
-    border-bottom-color: #f0f0f0;
-  }
-  body.light .tab-buttons {
-    border-bottom-color: #333;
-  }
-  .tab-button {
-    padding: 10px 20px;
-    cursor: pointer;
-    border: none;
-    background: transparent;
-    font-family: courier;
-    font-size: 14px;
-    color: inherit;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -2px;
-    transition: border-color 0.3s;
-  }
-  .tab-button:hover {
-    opacity: 0.7;
-  }
-  .tab-button.active {
-    border-bottom-color: inherit;
-  }
-  .tab-button.hidden-button {
-    opacity: 0;
-  }
-  .tab-button.hidden-button:hover {
-    opacity: 1;
-  }
-  .tab-button.hidden-button img {
-    height: 1em;
-  }
-  .tab-content {
-    display: none;
-  }
-  .tab-content.active {
-    display: block;
-  }
-  @media (max-width: 768px) {
-    body { font-size: 18px; }
-    #theme-toggle { padding: 12px 16px; font-size: 16px; }
-    .tab-button { padding: 12px 16px; font-size: 16px; }
-    .tabs, .map, .header-container { padding: 0 15px; }
-  }
-</style>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>welcome to azee's ~ page!</title>
+  <style type="text/css">
+    body {
+      font-family: courier;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background-color: #301934;
+      color: #f0f0f0;
+    }
+
+    body.light {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    #theme-toggle {
+      float: right;
+      padding: 8px 12px;
+      cursor: pointer;
+      border: 2px solid;
+      background: transparent;
+      font-family: courier;
+      font-size: 14px;
+    }
+
+    body.dark #theme-toggle {
+      border-color: #f0f0f0;
+      color: #f0f0f0;
+    }
+
+    body.light #theme-toggle {
+      border-color: #333;
+      color: #333;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .map {
+      max-width: 980px;
+      margin: 5px auto 10px;
+      padding: 0 10px;
+    }
+
+    .map iframe {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      border: 0;
+    }
+
+    .header-container {
+      max-width: 980px;
+      margin: 20px auto;
+      padding: 0 10px;
+      overflow: hidden;
+    }
+
+    .tabs {
+      max-width: 980px;
+      margin: 20px auto;
+      padding: 0 10px;
+    }
+
+    .tab-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid;
+    }
+
+    body.dark .tab-buttons {
+      border-bottom-color: #f0f0f0;
+    }
+
+    body.light .tab-buttons {
+      border-bottom-color: #333;
+    }
+
+    .tab-button {
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      font-family: courier;
+      font-size: 14px;
+      color: inherit;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: border-color 0.3s;
+    }
+
+    .tab-button:hover {
+      opacity: 0.7;
+    }
+
+    .tab-button.active {
+      border-bottom-color: inherit;
+    }
+
+    .tab-button.hidden-button {
+      opacity: 0;
+    }
+
+    .tab-button.hidden-button:hover {
+      opacity: 1;
+    }
+
+    .tab-button.hidden-button img {
+      height: 1em;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 18px;
+      }
+
+      #theme-toggle {
+        padding: 12px 16px;
+        font-size: 16px;
+      }
+
+      .tab-button {
+        padding: 12px 16px;
+        font-size: 16px;
+      }
+
+      .tabs,
+      .map,
+      .header-container {
+        padding: 0 15px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
   <div class="header-container">
@@ -121,37 +159,48 @@
     <div class="tab-buttons">
       <button class="tab-button active" onclick="switchTab('home', event)">Home</button>
       <button class="tab-button" onclick="switchTab('travel', event)">Travel</button>
-      <button class="tab-button hidden-button" onclick="window.location.href='hidden.html'"><img src="https://media1.tenor.com/m/F7Cd9OI_XRQAAAAC/kid-meme.gif" alt="hidden"></button>
+      <button class="tab-button hidden-button" onclick="window.location.href='hidden.html'"><img
+          src="https://media1.tenor.com/m/F7Cd9OI_XRQAAAAC/kid-meme.gif" alt="hidden"></button>
     </div>
 
     <div id="home-tab" class="tab-content active">
-      <p> Hello, i'm azee. i'm a 22 y/o site reliability engineer working in the san francisco bay area. i waste time on the internet sometimes :P </p>
+      <p> Hello, i'm azee. i'm a 22 y/o site reliability engineer working in the san francisco bay area. i waste time on
+        the internet sometimes :P </p>
       <p> I enjoy cars, watches, travel and consumer technology. Talk to me about my hobbies! </p>
       <br>
       <br>
       <h2><a href="https://en.wikipedia.org/wiki/Web_badge">88x31</a> buttons</h2>
       <p> i might have friends????? :D check them out</p>
-      <a href="https://tilde.town/~azee/"><img src="https://tilde.town/~azee/images/web-badge.gif" width="88" height="31" loading="lazy" style="image-rendering: pixelated;"></a>
-      <a href="https://uwu.gal/about-us"><img src="https://uwu.gal/button.png" width="88" height="31" loading="lazy" style="image-rendering: pixelated;"></a>
-      <a href="https://lumap.xyz"><img src="https://lumap.xyz/button.png" width="88" height="31" loading="lazy" style="image-rendering: pixelated;"></a>
-      <a href="https://enby.space"><img src="https://enby.space/media/88x31.png" width="88" height="31" loading="lazy" style="image-rendering: pixelated;"></a>
-      <a href="https://dominikkoch.dev/"><img src="https://dominikkoch.dev/images/friend/dominik.png" width="88" height="31" loading="lazy" style="image-rendering: pixelated;"></a>
-      <a href="https://byeoon.dev"><img src="https://byeoon.dev/img/button.png" width="88" height="31" loading="lazy" style="image-rendering: pixelated;"></a>
-      <a href="https://panley.xn--q9jyb4c/"><img src="https://blog.pnly.io/content/images/2025/01/panley.png" width="88" height="31" loading="lazy" style="image-rendering: pixelated;"></a>
-      <a href="https://quintenvw.com"><img src="https://quintenvw.com/static/img/button.png" width="88" height="31" loading="lazy" style="image-rendering: pixelated;"></a>
-      <a href="https://imrock.dev"><img src="https://imrock.dev/assets/8831.png" width="88" height="31" loading="lazy" style="image-rendering: pixelated;"></a>
-      <a href="https://auxim.gay"><img src="https://auxim.gay/img/webring/auxim.png" width="88" height="31" loading="lazy" style="image-rendering: pixelated;"></a>
+      <a href="https://tilde.town/~azee/"><img src="https://tilde.town/~azee/images/web-badge.gif" width="88"
+          height="31" loading="lazy" style="image-rendering: pixelated;"></a>
+      <a href="https://uwu.gal/about-us"><img src="https://uwu.gal/button.png" width="88" height="31" loading="lazy"
+          style="image-rendering: pixelated;"></a>
+      <a href="https://lumap.xyz"><img src="https://lumap.xyz/button.png" width="88" height="31" loading="lazy"
+          style="image-rendering: pixelated;"></a>
+      <a href="https://enby.space"><img src="https://enby.space/media/88x31.png" width="88" height="31" loading="lazy"
+          style="image-rendering: pixelated;"></a>
+      <a href="https://dominikkoch.dev/"><img src="https://dominikkoch.dev/images/friend/dominik.png" width="88"
+          height="31" loading="lazy" style="image-rendering: pixelated;"></a>
+      <a href="https://byeoon.dev"><img src="https://byeoon.dev/img/button.png" width="88" height="31" loading="lazy"
+          style="image-rendering: pixelated;"></a>
+      <a href="https://panley.xn--q9jyb4c/"><img src="https://blog.pnly.io/content/images/2025/01/panley.png" width="88"
+          height="31" loading="lazy" style="image-rendering: pixelated;"></a>
+      <a href="https://quintenvw.com"><img src="https://quintenvw.com/static/img/button.png" width="88" height="31"
+          loading="lazy" style="image-rendering: pixelated;"></a>
+      <a href="https://imrock.dev"><img src="https://imrock.dev/assets/8831.png" width="88" height="31" loading="lazy"
+          style="image-rendering: pixelated;"></a>
+      <a href="https://auxim.gay"><img src="https://auxim.gay/img/webring/auxim.png" width="88" height="31"
+          loading="lazy" style="image-rendering: pixelated;"></a>
     </div>
 
     <div id="travel-tab" class="tab-content">
       <h2> i think i like going places, here's the countries i've visited!</h2>
       <div class="map">
         <iframe
-          src="https://www.fla-shop.com/visited-countries/embed/?st=CA%2CCH%2CCN%2CES%2CFR%2CGB%2CIE%2CIT%2CJP%2CKP%2CKR%2CMC%2CMN%2CMX%2CRU%2CSG%2CUS%2CVA&vc=1ca032&uc=b3c3ca&hc=40bfa6&bc=ffffff"
-          loading="lazy"
-          allowfullscreen>
+          src="https://www.fla-shop.com/visited-countries/embed/?st=CA%2CCH%2CCN%2CDE%2CES%2CFR%2CGB%2CIE%2CIS%2CIT%2CJP%2CKP%2CKR%2CMC%2CMN%2CMX%2CPT%2CRU%2CSG%2CUS%2CVA&vc=1ca032&uc=b3c3ca&hc=40bfa6&bc=ffffff"
+          loading="lazy" allowfullscreen>
         </iframe>
-      </div>   
+      </div>
       <h3>these include</h3>
       <ul>
         <li>United States (all states except Alaska)</li>
@@ -172,57 +221,61 @@
         <li>Switzerland</li>
         <li>Vatican City</li>
         <li>Russia</li>
+        <li>Iceland</li>
+        <li>Germany</li>
+        <li>Portugal</li>
       </ul>
     </div>
   </div>
 
   <script>
-    (function() {
-    const button = document.getElementById('theme-toggle');
+    (function () {
+      const button = document.getElementById('theme-toggle');
 
-    function applyTheme(theme) {
-      document.body.className = theme;
-      button.textContent = theme === 'dark' ? 'Literally Blind Me' : 'Save My Eyes';
-      localStorage.setItem('theme', theme);
-    }
-
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    applyTheme(savedTheme);
-
-    window.toggleTheme = function() {
-      const newTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
-      applyTheme(newTheme);
-    };
-
-    window.switchTab = function(tabName, event) {
-      const tabContents = document.querySelectorAll('.tab-content');
-      tabContents.forEach(tab => tab.classList.remove('active'));
-
-      const tabButtons = document.querySelectorAll('.tab-button');
-      tabButtons.forEach(button => button.classList.remove('active'));
-
-      document.getElementById(tabName + '-tab').classList.add('active');
-
-      if (event && event.target) {                                                                                                          
-        event.target.classList.add('active');
-      } else {
-        const buttons = document.querySelectorAll('.tab-button');
-        buttons.forEach(btn => {
-          if (btn.textContent.toLowerCase() === tabName) {
-            btn.classList.add('active');
-          }
-        });
+      function applyTheme(theme) {
+        document.body.className = theme;
+        button.textContent = theme === 'dark' ? 'Literally Blind Me' : 'Save My Eyes';
+        localStorage.setItem('theme', theme);
       }
 
-      localStorage.setItem('activeTab', tabName);
-    };
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      applyTheme(savedTheme);
 
-    const savedTab = localStorage.getItem('activeTab') || 'home';
-    if (savedTab && savedTab !== 'home') {
-      switchTab(savedTab);
-    }
-  })();
+      window.toggleTheme = function () {
+        const newTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
+        applyTheme(newTheme);
+      };
+
+      window.switchTab = function (tabName, event) {
+        const tabContents = document.querySelectorAll('.tab-content');
+        tabContents.forEach(tab => tab.classList.remove('active'));
+
+        const tabButtons = document.querySelectorAll('.tab-button');
+        tabButtons.forEach(button => button.classList.remove('active'));
+
+        document.getElementById(tabName + '-tab').classList.add('active');
+
+        if (event && event.target) {
+          event.target.classList.add('active');
+        } else {
+          const buttons = document.querySelectorAll('.tab-button');
+          buttons.forEach(btn => {
+            if (btn.textContent.toLowerCase() === tabName) {
+              btn.classList.add('active');
+            }
+          });
+        }
+
+        localStorage.setItem('activeTab', tabName);
+      };
+
+      const savedTab = localStorage.getItem('activeTab') || 'home';
+      if (savedTab && savedTab !== 'home') {
+        switchTab(savedTab);
+      }
+    })();
   </script>
 
 </body>
+
 </html>
