@@ -1,0 +1,210 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>azee's photography</title>
+    <style type="text/css">
+        body {
+            font-family: courier;
+            transition: background-color 0.3s, color 0.3s;
+            margin: 0;
+            padding: 0;
+        }
+
+        body.dark {
+            background-color: #301934;
+            color: #f0f0f0;
+        }
+
+        body.light {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        #theme-toggle,
+        #back-button {
+            padding: 8px 12px;
+            cursor: pointer;
+            border: 2px solid;
+            background: transparent;
+            font-family: courier;
+            font-size: 14px;
+        }
+
+        #back-button {
+            justify-self: start;
+        }
+
+        #theme-toggle {
+            justify-self: end;
+        }
+
+        body.dark #theme-toggle,
+        body.dark #back-button {
+            border-color: #f0f0f0;
+            color: #f0f0f0;
+        }
+
+        body.light #theme-toggle,
+        body.light #back-button {
+            border-color: #333;
+            color: #333;
+        }
+
+        #theme-toggle:hover,
+        #back-button:hover {
+            opacity: 0.7;
+        }
+
+        .header-container {
+            max-width: 980px;
+            margin: 20px auto;
+            padding: 0 10px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+        }
+
+        .header-title {
+            text-align: center;
+        }
+
+        .content {
+            max-width: 980px;
+            margin: 20px auto;
+            padding: 0 10px;
+        }
+
+        .photo-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+
+        .photo-item {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .photo-caption {
+            font-size: 16px;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 18px;
+            }
+
+            .header-container {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            #theme-toggle,
+            #back-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header-container">
+        <button id="back-button" onclick="window.location.href='index.html'">← Go Back</button>
+        <div class="header-title">
+            <h1>azee's photography</h1>
+            <p>how i see the world</p>
+        </div>
+        <button id="theme-toggle" onclick="toggleTheme()">Literally Blind Me</button>
+    </div>
+
+    <div class="content">
+        <div class="photo-list" id="photo-list">
+            <div class="photo-item">
+                <img src="images/photographs/image0.jpg" loading="lazy">
+                <div class="photo-caption">Downtown New York Skyline, 2020. Apple #ShotoniPhone "Ultrawide" competition
+                    nominee.
+                </div>
+            </div>
+            <div class="photo-item">
+                <img src="images/photographs/image1.jpg" loading="lazy">
+                <div class="photo-caption">"Wanderer on Emerald Lake", 2017. Large print auctioned for neuroscience
+                    research.
+                </div>
+            </div>
+            <div class="photo-item">
+                <img src="images/photographs/IMG_2574.jpg" loading="lazy">
+                <div class="photo-caption">New York again, 2023</div>
+            </div>
+            <div class="photo-item">
+                <img src="images/photographs/IMG_4649.jpg" loading="lazy">
+                <div class="photo-caption">London from atop the walkie talkie, 2025 </div>
+            </div>
+            <div class="photo-item">
+                <img src="images/photographs/IMG_6645.jpg" loading="lazy">
+                <div class="photo-caption">Lisbon Skyline, 2026</div>
+            </div>
+            <div class="photo-item">
+                <img src="images/photographs/IMG_2459.JPG" loading="lazy">
+                <div class="photo-caption">BMW Z8 interior, 2025</div>
+            </div>
+            <div class="photo-item">
+                <img src="images/photographs/IMG_2464.JPG" loading="lazy">
+                <div class="photo-caption">Mercedes-Benz AMG GTR, 2025</div>
+            </div>
+            <div class="photo-item">
+                <img src="images/photographs/IMG_3289.jpg" loading="lazy">
+                <div class="photo-caption">BMW M4 close-up, 2024</div>
+            </div>
+            <div class="photo-item">
+                <img src="images/photographs/IMG_2355.jpg" loading="lazy">
+                <div class="photo-caption">DC Capitol Building, 2023</div>
+            </div>
+            <div class="photo-item">
+                <img src="images/photographs/A0ACC90C-58B7-413B-A8A4-856B3547784D.jpg" loading="lazy">
+                <div class="photo-caption">Boston University Comp Sci building, 2023</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; font-size: 14px; margin-top: 40px; margin-bottom: 20px;">
+        &copy; 2026 azee (@realazee on github). all rights reserved. please do not use or reproduce these photographs
+        without permission (just ask me @azee.bsky.social :D).
+    </div>
+
+    <script>
+        (function () {
+            const button = document.getElementById('theme-toggle');
+
+            function applyTheme(theme) {
+                document.body.className = theme;
+                button.textContent = theme === 'dark' ? 'Literally Blind Me' : 'Save My Eyes';
+                localStorage.setItem('theme', theme);
+            }
+
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            applyTheme(savedTheme);
+
+            window.toggleTheme = function () {
+                const newTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
+                applyTheme(newTheme);
+            };
+
+        })();
+    </script>
+
+</body>
+
+</html>

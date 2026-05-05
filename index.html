@@ -104,24 +104,26 @@
       border-bottom-color: inherit;
     }
 
-    .tab-button.hidden-button {
-      opacity: 0;
-    }
-
-    .tab-button.hidden-button:hover {
-      opacity: 1;
-    }
-
-    .tab-button.hidden-button img {
-      height: 1em;
-    }
-
     .tab-content {
       display: none;
     }
 
     .tab-content.active {
       display: block;
+    }
+
+    .new-badge {
+      font-size: 0.75em;
+      vertical-align: sub;
+      margin-left: 4px;
+    }
+
+    body.dark .new-badge {
+      color: yellow;
+    }
+
+    body.light .new-badge {
+      color: #b8860b;
     }
 
     @media (max-width: 768px) {
@@ -159,8 +161,8 @@
     <div class="tab-buttons">
       <button class="tab-button active" onclick="switchTab('home', event)">Home</button>
       <button class="tab-button" onclick="switchTab('travel', event)">Travel</button>
-      <button class="tab-button hidden-button" onclick="window.location.href='hidden.html'"><img
-          src="https://media1.tenor.com/m/F7Cd9OI_XRQAAAAC/kid-meme.gif" alt="hidden"></button>
+      <button class="tab-button" onclick="window.location.href='photography.html'">Photography<span
+          class="new-badge">(new)</span></button>
     </div>
 
     <div id="home-tab" class="tab-content active">
