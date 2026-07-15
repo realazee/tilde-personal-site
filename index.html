@@ -19,35 +19,29 @@
       color: #333;
     }
 
-    #hdr-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 1px;
-      height: 1px;
-      opacity: 0;
-      pointer-events: none;
-      z-index: -1;
+    /* HDR Easter egg: video triggers browser EDR mode, button glows */
+    .toggle-wrap {
+      float: right;
+      position: relative;
     }
 
-    #hdr-overlay {
+    .toggle-wrap #hdr-video {
       display: none;
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      object-fit: cover;
       pointer-events: none;
-      z-index: 9999;
-      backdrop-filter: brightness(18);
+      z-index: 0;
     }
 
-    body.light #hdr-overlay {
+    body.light .toggle-wrap #hdr-video {
       display: block;
     }
 
     #theme-toggle {
-      float: right;
       padding: 8px 12px;
       cursor: pointer;
       border: 2px solid;
@@ -64,6 +58,9 @@
     body.light #theme-toggle {
       border-color: #333;
       color: #333;
+      position: relative;
+      z-index: 1;
+      backdrop-filter: brightness(10);
     }
 
     a {
@@ -179,15 +176,15 @@
 
 <body>
 
-  <!-- based on https://kidi.ng/wanna-see-a-whiter-white/ -->
-  <video id="hdr-video" autoplay loop muted playsinline>
-    <source src="images/hdr-trigger.webm" type="video/webm">
-    <source src="images/hdr-trigger.mp4" type="video/mp4">
-  </video>
-  <div id="hdr-overlay"></div>
-
   <div class="header-container">
-    <button id="theme-toggle" onclick="toggleTheme()">Literally Blind Me</button>
+    <!-- HDR Easter egg: https://kidi.ng/wanna-see-a-whiter-white/ -->
+    <div class="toggle-wrap">
+      <video id="hdr-video" autoplay loop muted playsinline>
+        <source src="images/hdr-trigger.webm" type="video/webm">
+        <source src="images/hdr-trigger.mp4" type="video/mp4">
+      </video>
+      <button id="theme-toggle" onclick="toggleTheme()">Literally Blind Me</button>
+    </div>
     <h1>azee's homepage</h1>
   </div>
 
