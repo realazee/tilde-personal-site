@@ -287,9 +287,10 @@
         switchTab(savedTab);
       }
 
-      fetch(`https://api.countapi.xyz/hit/${location.hostname}/visits`)
+      const counterNamespace = 'azee-personal-site';
+      fetch(`https://api.counterapi.dev/v1/${counterNamespace}/visits/up`)
         .then(r => r.json())
-        .then(d => document.getElementById('count').innerText = d.value.toLocaleString())
+        .then(d => document.getElementById('count').innerText = d.count.toLocaleString())
         .catch(() => document.getElementById('count').innerText = 'unavailable');
     })();
   </script>
