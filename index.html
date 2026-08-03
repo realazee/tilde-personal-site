@@ -203,6 +203,7 @@
           width="88" height="31" loading="lazy" style="image-rendering: pixelated;"></a>
       <a href="https://lowerhall.org/"><img src="https://files.lowerhall.org/assets/88x31-button-color.png" width="88"
           height="31" loading="lazy" style="image-rendering: pixelated;"></a>
+      <p id="visitor-counter" style="margin-top: 25px;">visitor count: <span id="count">loading...</span></p>
     </div>
 
     <div id="travel-tab" class="tab-content">
@@ -285,6 +286,11 @@
       if (savedTab && savedTab !== 'home') {
         switchTab(savedTab);
       }
+
+      fetch(`https://api.countapi.xyz/hit/${location.hostname}/visits`)
+        .then(r => r.json())
+        .then(d => document.getElementById('count').innerText = d.value.toLocaleString())
+        .catch(() => document.getElementById('count').innerText = 'unavailable');
     })();
   </script>
 
