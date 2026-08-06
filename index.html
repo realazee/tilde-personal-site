@@ -203,8 +203,10 @@
           alt="ruby's website" width="88" height="31" loading="lazy" style="image-rendering: pixelated;"></a>
       <a href="https://lowerhall.org/"><img src="https://files.lowerhall.org/assets/88x31-button-color.png"
           alt="lowerhall website" width="88" height="31" loading="lazy" style="image-rendering: pixelated;"></a>
-      <p id="visitor-counter" style="margin-top: 25px;">visitor count<span class="new-badge">(new)</span>: <span
-          id="count">loading...</span></p>
+      <p id="visitor-counter" style="margin-top: 25px;">visitor count<span class="new-badge">(new)</span>:</p>
+      <img
+        src="https://counter.abigail.sh/@azee?name=azee&theme=capoo-2&padding=7&offset=0&align=top&scale=0.4&pixelated=1&darkmode=auto"
+        alt="Visitor Counter">
     </div>
 
     <div id="travel-tab" class="tab-content">
@@ -288,11 +290,6 @@
         switchTab(savedTab);
       }
 
-      const counterNamespace = 'azee-personal-site';
-      fetch(`https://api.counterapi.dev/v1/${counterNamespace}/visits/up`)
-        .then(r => r.json())
-        .then(d => document.getElementById('count').innerText = d.count.toLocaleString())
-        .catch(() => document.getElementById('count').innerText = 'unavailable');
     })();
   </script>
 
